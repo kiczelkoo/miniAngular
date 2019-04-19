@@ -1,0 +1,105 @@
+Ananas, owoce i warzywa
+Awokado (dojrzałe), owoce i warzywa
+Bakłażan, owoce i warzywa
+Banan, owoce i warzywa
+Bataty, owoce i warzywa
+Bazylia suszona, przyprawy
+Buraki gotowane, owoce i warzywa
+Cebula, owoce i warzywa
+Chili w proszku, przyprawy
+Chleb żytni na zakwasie, pieczywo
+Chleb żytni razowy na zakwasie, pieczywo
+Cukier kokosowy, substancje słodzące
+Cukinia, owoce i warzywa
+Cynamon mielony, przyprawy
+Czosnek, owoce i warzywa
+Daktyle suszone niesiarkowane, przetwory
+Ekologiczne masło migdałowe, przetwory
+Granat, owoce i warzywa
+Gruszka, owoce i warzywa
+Imbir mielony, przyprawy
+Imbir świeży, owoce i warzywa
+Jabłko, owoce i warzywa
+Jaja kurze, jaja
+Jarmuż Lio Shake, przetwory
+Jogurt naturalny 2% tłuszczu, nabiał
+Kakao gorzkie, przyprawy
+Kapusta biała, owoce i warzywa
+Kapusta młoda, owoce i warzywa
+Kasza jaglana, mąka/ryż/kasza
+Kiełki rzodkiewki, owoce i warzywa
+Kminek, przyprawy
+Koncentrat pomidorowy 30%, przetwory
+Koperek, owoce i warzywa
+Ksylitol (cukier brzozowy), substancje słodzące
+Kurkuma mielona, przyprawy
+Len nasiona, orzechy i nasiona
+Liść laurowy, przyprawy
+Lubczyk świeże liście, przyprawy
+Majeranek suszony, przyprawy
+Malina Lio Shake, przetwory
+Marchew, owoce i warzywa
+Masło klarowane, tłuszcze
+Miód pszczeli, substancje słodzące
+Mięso z piersi indyka bez skóry, mięso
+Mięso z piersi kurczaka bez skóry, mięso
+Mięta świeże liście, przyprawy
+Mleczko kokosowe 18% tłuszczu, mleka roślinne
+Mleko kokosowe (napój), mleka roślinne
+Mleko migdałowe, mleka roślinne
+Morszczuk świeży, ryby i owoce morza
+Mąka owsiana, mąka/ryż/kasza
+Mąka ryżowa, mąka/ryż/kasza
+Nasiona chia, orzechy i nasiona
+Ogórek kiszony, przetwory
+Olej kokosowy extra virgin, tłuszcze
+Olej lniany, tłuszcze
+Oliwa z oliwek, tłuszcze
+Oregano suszone, przyprawy
+Orzechy nerkowca, orzechy i nasiona
+Papryczka chili, owoce i warzywa
+Papryka czerwona, owoce i warzywa
+Papryka czerwona ostra, przyprawy
+Papryka czerwona słodka, przyprawy
+Papryka żółta, owoce i warzywa
+Pieczarka uprawna świeża, owoce i warzywa
+Pieprz czarny, przyprawy
+Pietruszka liście, owoce i warzywa
+Polędwiczka wieprzowa, mięso
+Pomidor, owoce i warzywa
+Pomidorki koktajlowe, owoce i warzywa
+Pomidory krojone w sosie własnym, przetwory
+Płatki drożdżowe bezglutenowe, inne
+Płatki migdałowe, orzechy i nasiona
+Płatki owsiane, mąka/ryż/kasza
+Rukola, owoce i warzywa
+Ryż basmati, mąka/ryż/kasza
+Ryż brązowy, mąka/ryż/kasza
+Rzodkiewka, owoce i warzywa
+Sałata lodowa, owoce i warzywa
+Ser mozzarella, nabiał
+Sezam nasiona, orzechy i nasiona
+Sok wyciśnięty z cytryny, inne
+Sola świeża, ryby i owoce morza
+Sos sojowy (tamari), przyprawy
+Suszone pomidory, przetwory
+Szczypiorek, owoce i warzywa
+Szpinak, owoce i warzywa
+Szpinak Lio Shake, przetwory
+Sól himalajska, przyprawy
+Sól morska, przyprawy
+Słonecznik nasiona, orzechy i nasiona
+Truskawki, owoce i warzywa
+Tuńczyk świeży, , ryby i owoce morza
+Tymianek suszony, przyprawy
+Wieprzowina schab surowy z kością, mięso
+Wiórki kokosowe, orzechy i nasiona
+Woda, napoje
+Woda kokosowa, napoje
+Wołowina rostbef, mięso
+Ziele angielskie, przyprawy
+Ziemniaki, owoce i warzywa
+Zioła prowansalskie, przyprawy
+Łosoś świeży, ryby i owoce morza
+Śliwki, owoce i warzywa
+Żurawina Lio Shake, przetwory

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Craftsmanship - miniAngular</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1 th:text="${recipe.name}"></h1>
+<h3 th:text="${recipe.category}"></h3>
+
+<ul th:if="not ${#lists.isEmpty(recipe.ingredients)}">
+    <li th:each="ingredient: ${recipe.ingredients}"
+        th:text="${ingredient.productName} + ', ' + ${ingredient.amount}"></li>
+</ul>
+
+<h2>SPOSÓB PRZYGOTOWANIA</h2>
+<p th:text="${recipe.description}"></p>
+
+</body>
+</html>

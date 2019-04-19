@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Craftsmanship - miniAngular</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script th:src="@{/webjars/select2/js/select2.full.min.js}" type="text/javascript"></script>
+    <link th:href="@{/webjars/select2/css/select2.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/select2.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div th:fragment="search-panel">
+    <form action="#" th:action="@{/recipes}" id="recipe">
+        <input type="submit">
+    </form>
+    <p>Wybierz składniki z listy</p>
+    <select name="product" form="recipe"
+            class="select2-container input multi-select select2-hidden-accessible"
+            aria-invalid="false"
+            multiple="multiple"
+            size="20">
+        <option value=""></option>
+        <option th:each="pr, itemStat: ${products}" th:value="${pr.name}" th:text="${pr.name}"
+                th:selected="${selectedProducts != null and #lists.contains(selectedProducts, pr.name)}">
+        </option>
+    </select>
+</div>
+</body>

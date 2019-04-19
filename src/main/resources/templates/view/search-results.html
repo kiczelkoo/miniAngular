@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Craftsmanship - miniAngular</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div th:replace="fragments/searchPanel :: search-panel"></div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th> Nazwa </th>
+        <th> Kategoria </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(recipes)}">
+        <td colspan="2"> Brak wyników </td>
+    </tr>
+    <tr th:each="recipe: ${recipes}">
+        <td><a th:href="@{/recipie-details(id=${recipe.id})}"><span th:text="${recipe.name}"></span></a></td>
+        <td><span th:text="${recipe.category}"></span></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
