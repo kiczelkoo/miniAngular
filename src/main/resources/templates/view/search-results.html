@@ -12,13 +12,13 @@
 <table>
     <thead>
     <tr>
-        <th> Nazwa </th>
-        <th> Kategoria </th>
+        <th> Nazwa</th>
+        <th> Kategoria</th>
     </tr>
     </thead>
     <tbody>
     <tr th:if="${#lists.isEmpty(recipes)}">
-        <td colspan="2"> Brak wyników </td>
+        <td colspan="2"> Brak wyników</td>
     </tr>
     <tr th:each="recipe: ${recipes}">
         <td><a th:href="@{/recipie-details(id=${recipe.id})}"><span th:text="${recipe.name}"></span></a></td>
@@ -26,6 +26,15 @@
     </tr>
     </tbody>
 </table>
+
+<mini-root></mini-root>
+
+<script type="text/javascript" src="runtime.js"></script>
+<script type="text/javascript" src="polyfills.js"></script>
+<script type="text/javascript" src="styles.js"></script>
+<script type="text/javascript" src="vendor.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
 
 
 </body>

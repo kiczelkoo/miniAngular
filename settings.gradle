@@ -1,0 +1,3 @@
+rootProject.name = 'miniAngular'
+
+include 'miniAngularClient'
