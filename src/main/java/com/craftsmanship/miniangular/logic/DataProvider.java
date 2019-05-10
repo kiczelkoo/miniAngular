@@ -4,15 +4,16 @@ package com.craftsmanship.miniangular.logic;
 import com.craftsmanship.miniangular.model.IngredientModel;
 import com.craftsmanship.miniangular.model.ProductModel;
 import com.craftsmanship.miniangular.model.RecipeModel;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +21,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class DataProvider {
+
     private static final String DESCRIPTON_PLCEHOLDER = "SPOSÓB PRZYGOTOWANIA";
     private static final String INGREDIENTS_SEPARATOR = ":";
     private static final String TITLE_SEPARATOR = "—";
@@ -29,12 +32,6 @@ public class DataProvider {
 
     private Set<RecipeModel> recipes = new HashSet<>();
 
-    @Value("classpath:data/products.txt")
-    private Resource productsFile;
-
-    @Value("classpath:data/recipes")
-    private Resource recipesFiles;
-
     @PostConstruct
     public void readData() throws IOException {
         readProducts();
@@ -42,22 +39,27 @@ public class DataProvider {
     }
 
     private void readProducts() throws IOException {
-        this.productsFile.getFile();
-        final BufferedReader br = new BufferedReader(new FileReader(this.productsFile.getFile()));
-        String line;
-
-        while ((line = br.readLine()) != null) {
-            final String[] product = line.split(",");
-            products.add(new ProductModel(product[0], product[1]));
+        ClassLoader classLoader = getClass().getClassLoader();
+        try (InputStream inputStream = classLoader.getResourceAsStream("data/products.txt")) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = br.readLine()) != null) {
+                final String[] product = line.split(",");
+                products.add(new ProductModel(product[0], product[1]));
+            }
+            br.close();
         }
     }
 
     private void readRecipes() throws IOException {
-        File[] listOfFiles = this.recipesFiles.getFile().listFiles();
-        long count = 0;
-        for (File file : listOfFiles) {
-            if (file.isFile() && file.getName().endsWith(".txt")) {
-                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        PathMatchingResourcePatternResolver scanner = new PathMatchingResourcePatternResolver();
+        Resource[] resources = scanner.getResources("data/recipes/*");
+        if (resources == null || resources.length == 0) {
+            log.warn("Warning: could not find any resources in this scanned package");
+        } else {
+            long count = 0;
+            for (Resource resource : resources) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
                     String line;
                     List<String> recipeFile = new ArrayList<>();
                     while ((line = br.readLine()) != null) {
@@ -65,10 +67,9 @@ public class DataProvider {
                     }
                     recipes.add(createRecipe(recipeFile, count));
                 }
+                count++;
             }
-            count++;
         }
-
     }
 
     private RecipeModel createRecipe(final List<String> recipeFile, final long id) {
