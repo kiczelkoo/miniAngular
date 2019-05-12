@@ -42,14 +42,15 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-bootJar {
-    from('miniAngularClient/dist/miniAngularClient') {
-        //Public is a default supported Spring Boot resources directory.
-        into 'static'
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "miniAngularClient/dist"
+        }
     }
 }
 
-//frontend:build will be run before the processResources
 processResources.dependsOn('miniAngularClient:build')
 
 
