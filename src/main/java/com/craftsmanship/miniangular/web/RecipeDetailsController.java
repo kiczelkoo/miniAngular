@@ -18,7 +18,7 @@ public class RecipeDetailsController {
         this.dataProvider = dataProvider;
     }
 
-    @GetMapping("/recipie-details")
+    @GetMapping("/recipe-details")
     public ModelAndView getRecipeDetails(@RequestParam(name="id") final Long recipeId) {
         final Optional<RecipeModel>
                 recipe = this.dataProvider.getRecipes().stream().filter(r -> r.getId().equals(recipeId)).findFirst();

@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <th> Nazwa</th>
+    <th> Kategoria</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngIf="!recipesModel">
+    <td colspan="2"> Brak wyników</td>
+  </tr>
+  <tr *ngFor="let recipe of recipesModel">
+    <td><a href="/recipe-details?id={{recipe.id}}"><span>{{recipe.name}}</span></a></td>
+    <td><span>{{recipe.category}}</span></td>
+  </tr>
+  </tbody>
+</table>
