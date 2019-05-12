@@ -29,6 +29,14 @@
 
 <mini-root></mini-root>
 
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var selectedProducts = {
+        names: /*[[${selectedProducts}]]*/ []
+    }
+    /*]]>*/
+</script>
+
 <script type="text/javascript" th:src="@{/miniAngularClient/runtime.js}"></script>
 <script type="text/javascript" th:src="@{/miniAngularClient/polyfills.js}"></script>
 <script type="text/javascript" th:src="@{/miniAngularClient/styles.js}"></script>

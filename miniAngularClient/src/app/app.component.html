@@ -3,5 +3,10 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <ul>
+    <li *ngFor="let product of selectedProducts.names">
+      <span>{{product}}</span>
+    </li>
+  </ul>
 </div>
 
