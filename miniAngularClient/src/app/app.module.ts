@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import {SearchService} from "./search.service";
 import {HttpClientModule} from '@angular/common/http';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,

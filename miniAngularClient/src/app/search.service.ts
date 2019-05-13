@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 export class SearchService {
 
   static readonly RECIPES_SEARCH_URL = '/api/recipes-search';
+  static readonly RECIPES_DETAILS_URL = '/api/recipes-details';
 
   constructor(private http: HttpClient) {
   }
@@ -18,6 +19,13 @@ export class SearchService {
       httpParams = httpParams.append('product', product);
     });
     return this.http.get<RecipeModel[]>(SearchService.RECIPES_SEARCH_URL, {params: httpParams});
+    // TODO do some error handling
+  }
+
+  getRecipeDetails(id: number): Observable<RecipeModel> {
+    let httpParams = new HttpParams();
+    httpParams = httpParams.append('id', id.toString());
+    return this.http.get<RecipeModel>(SearchService.RECIPES_DETAILS_URL, {params: httpParams});
     // TODO do some error handling
   }
 }

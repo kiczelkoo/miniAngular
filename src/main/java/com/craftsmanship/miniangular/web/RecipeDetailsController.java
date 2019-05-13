@@ -2,6 +2,7 @@ package com.craftsmanship.miniangular.web;
 
 import com.craftsmanship.miniangular.logic.DataProvider;
 import com.craftsmanship.miniangular.model.RecipeModel;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,15 +20,18 @@ public class RecipeDetailsController {
     }
 
     @GetMapping("/recipe-details")
-    public ModelAndView getRecipeDetails(@RequestParam(name="id") final Long recipeId) {
+    public ModelAndView getRecipeDetails(@RequestParam(name = "id") final Long recipeId) {
         final Optional<RecipeModel>
                 recipe = this.dataProvider.getRecipes().stream().filter(r -> r.getId().equals(recipeId)).findFirst();
         if (recipe.isPresent()) {
-            return new ModelAndView("view/recipe-details").addObject("recipe", recipe.get());
+            return new ModelAndView("view/recipe-details")
+                    .addObject("recipe", recipe.get())
+                    .addObject("recipeId", recipe.get().getId());
         } else {
-            return new ModelAndView("view/recipe-details").addObject("error-message", "No recipe with id " + recipeId + " found.");
+            return new ModelAndView("view/recipe-details").addObject(
+                    "error-message",
+                    "No recipe with id " + recipeId + " found.");
         }
     }
-
 
 }
