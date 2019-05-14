@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-declare var selectedProducts: MiniAngularBridge;
+declare var miniAngularBridge: MiniAngularBridge;
 
 @Component({
   selector: 'mini-root',
@@ -10,14 +10,17 @@ declare var selectedProducts: MiniAngularBridge;
 export class AppComponent implements OnInit{
   title = 'miniAngularClient';
 
-  selectedProducts: MiniAngularBridge;
+  miniAngularBridge: MiniAngularBridge;
 
   ngOnInit(): void {
-    this.selectedProducts = selectedProducts;
+    this.miniAngularBridge = miniAngularBridge;
   }
 
 }
 
 export interface MiniAngularBridge {
-  names: string[];
+  pageName: string;
+  products: string[];
+  recipeId: number;
 }
+

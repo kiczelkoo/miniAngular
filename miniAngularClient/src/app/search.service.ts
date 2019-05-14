@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 export class SearchService {
 
   static readonly RECIPES_SEARCH_URL = '/api/recipes-search';
-  static readonly RECIPES_DETAILS_URL = '/api/recipes-details';
+  static readonly RECIPES_DETAILS_URL = '/api/recipe-details';
 
   constructor(private http: HttpClient) {
   }

@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="recipesModel">
   <thead>
   <tr>
     <th> Nazwa</th>
@@ -6,7 +6,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngIf="!recipesModel">
+  <tr *ngIf="recipesModel.length === 0">
     <td colspan="2"> Brak wyników</td>
   </tr>
   <tr *ngFor="let recipe of recipesModel">

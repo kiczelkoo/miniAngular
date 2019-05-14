@@ -1,5 +1,4 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {MiniAngularBridge} from "../app.component";
 import {RecipeModel, SearchService} from "../search.service";
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
@@ -12,7 +11,7 @@ import {Subject} from 'rxjs';
 export class SearchResultsComponent implements OnInit, OnDestroy {
 
   @Input()
-  selectedProducts: MiniAngularBridge;
+  selectedProducts: string[];
 
   recipesModel: RecipeModel[];
 
@@ -22,7 +21,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.searchService.getRecipesForProducts(this.selectedProducts.names)
+    this.searchService.getRecipesForProducts(this.selectedProducts)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(recipesModel => {
       this.recipesModel = recipesModel;

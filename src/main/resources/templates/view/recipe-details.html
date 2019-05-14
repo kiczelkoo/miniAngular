@@ -6,16 +6,23 @@
 </head>
 <body>
 
-<h1 th:text="${recipe.name}"></h1>
-<h3 th:text="${recipe.category}"></h3>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var miniAngularBridge = {
+        pageName: 'RECIPE_DETAILS',
+        products: [],
+        recipeId: /*[[${recipeId}]]*/ null
+    }
+    /*]]>*/
+</script>
 
-<ul th:if="not ${#lists.isEmpty(recipe.ingredients)}">
-    <li th:each="ingredient: ${recipe.ingredients}"
-        th:text="${ingredient.productName} + ', ' + ${ingredient.amount}"></li>
-</ul>
+<mini-root></mini-root>
 
-<h2>SPOSÓB PRZYGOTOWANIA</h2>
-<p th:text="${recipe.description}"></p>
+<script type="text/javascript" th:src="@{/miniAngularClient/runtime.js}"></script>
+<script type="text/javascript" th:src="@{/miniAngularClient/polyfills.js}"></script>
+<script type="text/javascript" th:src="@{/miniAngularClient/styles.js}"></script>
+<script type="text/javascript" th:src="@{/miniAngularClient/vendor.js}"></script>
+<script type="text/javascript" th:src="@{/miniAngularClient/main.js}"></script>
 
 </body>
 </html>

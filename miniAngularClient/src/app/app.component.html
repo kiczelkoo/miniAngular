@@ -1,3 +1,3 @@
-<mini-search-results [selectedProducts]="selectedProducts"></mini-search-results>
-<mini-recipe-details [recipeId]="1"></mini-recipe-details>
+<mini-search-results *ngIf="miniAngularBridge.pageName === 'SEARCH_RESULTS'" [selectedProducts]="miniAngularBridge.products"></mini-search-results>
+<mini-recipe-details *ngIf="miniAngularBridge.pageName === 'RECIPE_DETAILS'" [recipeId]="miniAngularBridge.recipeId"></mini-recipe-details>
 

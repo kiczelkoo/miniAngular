@@ -1,3 +1,11 @@
-<p>
-  recipe-details works!
-</p>
+<div *ngIf="recipeModel">
+<h1>{{recipeModel.name}}</h1>
+<h3>{{recipeModel.category}}</h3>
+
+<ul>
+  <li *ngFor="let ingredient of recipeModel.ingredients">{{ingredient.productName + ', ' + ingredient.amount}}</li>
+</ul>
+
+<h2>SPOSÓB PRZYGOTOWANIA</h2>
+<p>{{recipeModel.description}}</p>
+</div>
