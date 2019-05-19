@@ -55,6 +55,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "dev" : {
+              "fileReplacements": [
+                {
+                  "replace": "src/index.html",
+                  "with": "src/index2.html"
+                }
+              ]
             }
           }
         },
@@ -67,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "miniAngularClient:build:production"
+            },
+            "dev" : {
+              "browserTarget": "miniAngularClient:build:dev"
             }
           }
         },
