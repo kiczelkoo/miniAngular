@@ -3,11 +3,13 @@ package com.craftsmanship.miniangular;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication
+@Slf4j
 public class Application {
 
     public static void main(String[] args) {
-        System.out.println(System.getProperty("file.encoding"));
         SpringApplication.run(Application.class, args);
     }
 
