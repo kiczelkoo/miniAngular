@@ -20,11 +20,10 @@
     /*]]>*/
 </script>
 
-<script type="text/javascript" th:src="@{/miniAngularClient/runtime.js}"></script>
-<script type="text/javascript" th:src="@{/miniAngularClient/polyfills.js}"></script>
-<script type="text/javascript" th:src="@{/miniAngularClient/styles.js}"></script>
-<script type="text/javascript" th:src="@{/miniAngularClient/vendor.js}"></script>
-<script type="text/javascript" th:src="@{/miniAngularClient/main.js}"></script>
+
+<script th:each="res: ${resources}" th:with="baseUrl=('/miniAngularClient/' + ${res})" type="text/javascript"
+        th:src="@{(${baseUrl})}"></script>
+
 </body>
 
 </html>

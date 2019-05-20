@@ -15,7 +15,7 @@ node {
 }
 
 task build(type: NpmTask) {
-    args = ['run', 'build']
+    args = ['run', 'buildProd']
 }
 
 build.dependsOn(npm_install)
