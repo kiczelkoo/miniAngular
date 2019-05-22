@@ -56,11 +56,11 @@
                 }
               ]
             },
-            "dev" : {
+            "details" : {
               "fileReplacements": [
                 {
                   "replace": "src/index.html",
-                  "with": "src/index2.html"
+                  "with": "src/details.html"
                 }
               ]
             }
@@ -76,8 +76,8 @@
             "production": {
               "browserTarget": "miniAngularClient:build:production"
             },
-            "dev" : {
-              "browserTarget": "miniAngularClient:build:dev"
+            "details" : {
+              "browserTarget": "miniAngularClient:build:details"
             }
           }
         },

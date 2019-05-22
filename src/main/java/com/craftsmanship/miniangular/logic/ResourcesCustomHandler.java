@@ -35,23 +35,23 @@ public class ResourcesCustomHandler {
         return Collections.emptyList();
     }
 
-}
+    class ResourceComparator implements Comparator<String> {
 
-class ResourceComparator implements Comparator<String> {
-
-    @Override
-    public int compare(String o1, String o2) {
-        return convertToInt(o1) - convertToInt(o2);
-    }
-
-    private int convertToInt(final String value) {
-        if (value.startsWith("polyfills")) {
-            return 1;
-        } else if (value.startsWith("style")) {
-            return 2;
-        } else if (value.startsWith("runtime")) {
-            return 3;
+        @Override
+        public int compare(String o1, String o2) {
+            return convertToInt(o1) - convertToInt(o2);
         }
-        return 4;
+
+        private int convertToInt(final String value) {
+            if (value.startsWith("polyfills")) {
+                return 1;
+            } else if (value.startsWith("style")) {
+                return 2;
+            } else if (value.startsWith("runtime")) {
+                return 3;
+            }
+            return 4;
+        }
     }
+
 }
